@@ -1,46 +1,71 @@
-## 프로젝트 세팅
+# ERC721 NFT Marketplace 
 
-### `$ yarn`
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/silviopaganini/nft-market?style=round)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=round)](https://github.com/prettier/prettier)
+![GitHub](https://img.shields.io/github/license/silviopaganini/nft-market?style=round)
+![](https://img.shields.io/badge/Typescript-💪-blue)
 
-### `.env.example`에 `EOA, Pinata, KAS` API keys를 기입(`.example 삭제`)
 
-### (자신의 컨트랙트를 사용하려면) `/contract/CodestatesAttend.json` 파일을 `자신의 컨트랙트 ABI파일`로 변경해주세요.
+Prototype of a NFT Marketplace based on openZeppelin abstract upgradeable ERC721 contracts and Minting/uploading images to IPFS and integration with Opensea.io
 
-<br />
+## ⚙️ Dependencies
 
-## 클라이언트 실행
+This project relies on [NFT Contracts](https://github.com/silviopaganini/nft-contracts) package and [NFT Lambda Service](https://github.com/silviopaganini/nft-market-service) for serving the metadata
 
-### `$ yarn start`
+## 🔬 Functionalities
 
-<br />
+1. Buy a pre-minted token.
+2. Sell the token that was bought.
+3. Transferring ETH to the previous token holder;
+4. Adding and removing tokens from the marketplace;
+5. Minting tokens;
+6. Uploading NFT image to IPFS;
+7. Metadata and marketplace on Opensea.io
+8. Metadata and IPFS Lambda functions on AWS
 
-## 옵셔널 세팅
+<hr />
 
-### `shift + command + x` 눌러서 `eslint extension` 설치 (optional)
+See it live on [Rinkeby Network](https://nft.s2paganini.com) 
 
-### (Optional) caver 호환성 문제
+See [my portfolio](https://s2paganini.com/case/ckm0zl44o0w1i0a54lryryi1d) for more details 
 
-```js
-module.exports = {
-    ...
-    resolve: {
-        fallback: {
-            fs: false,
-            net: false,
-            stream: require.resolve('stream-browserify'),
-            crypto: require.resolve('crypto-browserify'),
-            http: require.resolve('stream-http'),
-            https: require.resolve('https-browserify'),
-            os: require.resolve('os-browserify/browser'),
-            ...
-        },
-    },
+<hr />
 
-    plugins: [
-      new webpack.ProvidePlugin({
-        Buffer: ['buffer', 'Buffer'],
-      }),
-      ...
-    ],
-}
+## ETH-USD Service
+
+It's been transferred to the [NFT Lambda Service](https://github.com/silviopaganini/nft-market-service) repository.
+
+## ⚡️ Tech-Stack
+
+- Typescript
+- Solidity
+- React
+- Truffle / Ganache
+- Storybook
+- openZeppelin
+- Metamask (web3)
+- Opensea.io
+- Web3-react
+- IPFS
+- Lambda AWS
+- serverless
+
+## 🔧 .env file 
+
 ```
+NODE_ENV=development
+BROWSER=chrome
+REACT_APP_SERVICE_URL=http://localhost:4000/dev
+REACT_APP_RPC_URL_1=http://0.0.0.0:7545
+REACT_APP_RPC_URL_4=https://rinkeby.infura.io/v3/INFURA_KEY
+
+```
+
+
+## 💰 Sponsor this project
+
+Donations in ETH or BTC are welcome 
+
+**ETH** `0xD20634a78Fa0e98104419a63C278648ccCff4Ce7`
+
+**BTC** `35pDYqWj5zyogGbNb15W44e9veu6899cZj`
